@@ -1,0 +1,42 @@
+﻿@model PokéBase.Models.Trainer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Trainer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.trainerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.trainerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.region)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.trainerClass)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.trainerClass)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.trainerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,77 @@
+﻿@model PokéBase.Models.Trainer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Trainer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>Name</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Region</label>
+                <select asp-for="region" class="form-control">
+                    <option value="Kanto">Kanto</option>
+                    <option value="Johto">Johto</option>
+                    <option value="Hoenn">Hoenn</option>
+                    <option value="Sinnoh">Sinnoh</option>
+                    <option value="Unova">Unova</option>
+                    <option value="Kalos">Kalos</option>
+                    <option value="Alola">Alola</option>
+                    <option value="Galar">Galar</option>
+                </select>
+                <span asp-validation-for="region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Trainer Class</label>
+                <select asp-for="trainerClass" class="form-control">
+                    <option value="Ace Trainer">Ace Trainer</option>
+                    <option value="Battle Girl">Battle Girl</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Biker">Biker</option>
+                    <option value="Bird Keeper">Bird Keeper</option>
+                    <option value="Black Belt">Black Belt</option>
+                    <option value="Bug Catcher">Bug Catcher</option>
+                    <option value="Camper">Camper</option>
+                    <option value="Champion">Champion</option>
+                    <option value="Channeler">Channeler</option>
+                    <option value="Elite Four">Elite Four</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Fisherman">Fisherman</option>
+                    <option value="Gentleman">Gentleman</option>
+                    <option value="Hiker">Hiker</option>
+                    <option value="Poké Kid">Poké Kid</option>
+                    <option value="Lass">Lass</option>
+                    <option value="Leader">Leader</option>
+                    <option value="Pokémaniac">Pokémaniac</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Sailor">Sailor</option>
+                    <option value="Scientist">Scientist</option>
+                    <option value="Swimmer">Swimmer</option>
+                    <option value="Youngster">Youngster</option>
+                </select>
+                <span asp-validation-for="trainerClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+﻿@model PokéBase.Models.Pokemon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pokemon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <h3>@ViewData["Log"]</h3>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>Dex Number</label>
+                <select asp-for="dexNum" class="form-control" required>
+                @for (int i = 1; i <= 151; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+                </select>
+                <span asp-validation-for="dexNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Nickname</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Trainer ID</label>
+                <input asp-for="originalTrainer" class="form-control"/>
+                <span asp-validation-for="originalTrainer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
